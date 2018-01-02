@@ -12,13 +12,14 @@ mv terraform_remote.tf.no terraform_remote.tf
 terraform init (copy configuration from local to s3
 ```
 
-TODO: 
-
-Create base module to expose: 
 
 DNS: 
 - Zones
 - Delegation records
+
+TODO: 
+
+Create base module to expose: 
 
 Network:
 - VPC
