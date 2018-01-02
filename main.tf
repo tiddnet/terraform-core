@@ -14,12 +14,13 @@
 
 # Setup DNS delegation sets
 
-resource "aws_route53_zone" "main" {
-  name = "pseudonet.us."
-}
-
 resource "aws_route53_delegation_set" "main" {
   reference_name = "pseudonet.us"
+}
+
+resource "aws_route53_zone" "main" {
+  name              = "pseudonet.us."
+  delegation_set_id = "${aws_route53_delegation_set.main.id}"
 }
 
 resource "aws_route53_record" "ns" {
