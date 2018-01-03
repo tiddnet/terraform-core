@@ -8,24 +8,24 @@
 #
 #
 
-# Setup VPCs
+# Setup VPCs - done
 
-# Setup Public Subnets
+# Setup Public Subnets - done 
 
 # Setup DNS delegation sets
 
 resource "aws_route53_delegation_set" "main" {
-  reference_name = "scientiamobile.co.za."
+  reference_name = "pseudonet.us"
 }
 
 resource "aws_route53_zone" "main" {
-  name              = "scientiamobile.co.za."
+  name              = "pseudonet.us."
   delegation_set_id = "${aws_route53_delegation_set.main.id}"
 }
 
 resource "aws_route53_record" "ns" {
   zone_id = "${aws_route53_zone.main.zone_id}"
-  name    = "scientiamobile.co.za."
+  name    = "pseudonet.us"
   type    = "NS"
   ttl     = "172800"
   records = ["ns-274.awsdns-34.com", "ns-1108.awsdns-10.org", "ns-650.awsdns-17.net", "ns-1955.awsdns-52.co.uk"]

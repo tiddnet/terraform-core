@@ -17,13 +17,14 @@ DNS:
 - Zones
 - Delegation records
 
+Network:
+- VPC
+- subnets [private, public] 
+
 TODO: 
 
 Create base module to expose: 
 
-Network:
-- VPC
-- subnets [private, public] 
 
 Security Policy:
 - Security groups
