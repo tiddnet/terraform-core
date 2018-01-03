@@ -6,7 +6,6 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
-
 # # Given a region, lookup the subnets available from vpc_networks (map)
 resource "aws_vpc" "main" {
   cidr_block = "${lookup(var.vpc_networks, var.aws_region)}"

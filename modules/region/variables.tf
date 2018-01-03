@@ -1,4 +1,3 @@
-
 variable "availability_zones" {}
 variable "aws_region" {}
 
@@ -13,5 +12,3 @@ variable "vpc_networks" {
     eu-west-2      = "10.8.0.0/16"
   }
 }
-
-

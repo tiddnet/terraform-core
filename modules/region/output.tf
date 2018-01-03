@@ -1,3 +1,3 @@
 output "subnet_ids" {
-    value = ["${aws_subnet.public-subnet.*.id}"]
-} 
+  value = ["${aws_subnet.public-subnet.*.id}"]
+}
