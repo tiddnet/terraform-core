@@ -1,5 +1,5 @@
 resource "aws_instance" "jump_box" {
-  ami           = "${data.aws_ami.WURFLjs-green.id}"
+  ami           = "${data.aws_ami.bastion-green.id}"
   instance_type = "t2.medium"
   key_name      = "terraform-test-2"
 
@@ -20,6 +20,11 @@ resource "aws_instance" "jump_box" {
                                 #!/bin/bash
                                 service docker start 
                                 EOF
+
+  tags {
+    Name = "bastion-green"
+  }
+
 }
 
 resource "aws_security_group" "jump_box_sg" {
@@ -54,7 +59,7 @@ resource "aws_security_group" "home-network-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["50.193.136.225/32", "70.42.150.228/32"]
+    cidr_blocks = ["70.42.150.228/32", "144.121.140.150/32"]
   }
 
   revoke_rules_on_delete = true
