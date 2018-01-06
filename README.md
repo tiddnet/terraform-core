@@ -17,7 +17,6 @@ DNS:
 - Zones
 - Delegation records
 
-TODO: 
 
 Create base module to expose: 
 
@@ -28,6 +27,8 @@ Network:
 Security Policy:
 - Security groups
 - Define bastion hosts
+
+TODO: 
 
 Logging:
 
